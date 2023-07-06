@@ -288,8 +288,11 @@ uvicorn main:app
 
 ## 🗺 Roadmap
 
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Refactor Y`
+> - [ ] `ℹ️  Task 1: Dockerizing the application`
+> - [ ] `ℹ️  Task 2: Using KMS/Key Vault for secret storage`
+> - [ ] `ℹ️  Task 3: Scraping from more endpoints including users, questions, etc`
+> - [ ] `ℹ️  Task 4: Making the code base more robust`
+> - [ ] `ℹ️  Task 5: using S3/Blob storage as a staging area to COPY INTO Snowflake rather than local flat files`
 > - [ ] `ℹ️ ...`
 
 
