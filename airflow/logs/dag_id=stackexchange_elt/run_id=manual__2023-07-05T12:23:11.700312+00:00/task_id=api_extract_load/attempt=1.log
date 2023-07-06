@@ -1,20 +1,0 @@
-[2023-07-05T17:53:18.411+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stackexchange_elt.api_extract_load manual__2023-07-05T12:23:11.700312+00:00 [queued]>
-[2023-07-05T17:53:18.418+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stackexchange_elt.api_extract_load manual__2023-07-05T12:23:11.700312+00:00 [queued]>
-[2023-07-05T17:53:18.418+0530] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
-[2023-07-05T17:53:18.428+0530] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): api_extract_load> on 2023-07-05 12:23:11.700312+00:00
-[2023-07-05T17:53:18.431+0530] {standard_task_runner.py:57} INFO - Started process 76544 to run task
-[2023-07-05T17:53:18.437+0530] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'stackexchange_elt', 'api_extract_load', 'manual__2023-07-05T12:23:11.700312+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/load_data_dag.py', '--cfg-path', '/var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T/tmpkcktekx0']
-[2023-07-05T17:53:18.439+0530] {standard_task_runner.py:85} INFO - Job 84: Subtask api_extract_load
-[2023-07-05T17:53:18.477+0530] {task_command.py:410} INFO - Running <TaskInstance: stackexchange_elt.api_extract_load manual__2023-07-05T12:23:11.700312+00:00 [running]> on host shubhams-macbook-air.local
-[2023-07-05T17:53:18.530+0530] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your-email@example.com' AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='stackexchange_elt' AIRFLOW_CTX_TASK_ID='api_extract_load' AIRFLOW_CTX_EXECUTION_DATE='2023-07-05T12:23:11.700312+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-05T12:23:11.700312+00:00'
-[2023-07-05T17:53:18.532+0530] {subprocess.py:63} INFO - Tmp dir root location: /var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T
-[2023-07-05T17:53:18.533+0530] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl http://localhost:8000/api/v1/load-data']
-[2023-07-05T17:53:18.539+0530] {subprocess.py:86} INFO - Output:
-[2023-07-05T17:53:18.563+0530] {subprocess.py:93} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-[2023-07-05T17:53:18.564+0530] {subprocess.py:93} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
-[2023-07-05T17:53:18.569+0530] {subprocess.py:93} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    38  100    38    0     0   3383      0 --:--:-- --:--:-- --:--:--  7600
-[2023-07-05T17:53:18.570+0530] {subprocess.py:93} INFO - {"message":"Data loading in progress"}
-[2023-07-05T17:53:18.570+0530] {subprocess.py:97} INFO - Command exited with return code 0
-[2023-07-05T17:53:18.591+0530] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=stackexchange_elt, task_id=api_extract_load, execution_date=20230705T122311, start_date=20230705T122318, end_date=20230705T122318
-[2023-07-05T17:53:18.626+0530] {local_task_job_runner.py:225} INFO - Task exited with return code 0
-[2023-07-05T17:53:18.652+0530] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

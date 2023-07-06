@@ -1,26 +1,0 @@
-[2023-07-04T11:46:29.366+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stackexchange_elt.api_extract_load scheduled__2023-07-03T00:00:00+00:00 [queued]>
-[2023-07-04T11:46:29.370+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stackexchange_elt.api_extract_load scheduled__2023-07-03T00:00:00+00:00 [queued]>
-[2023-07-04T11:46:29.370+0530] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
-[2023-07-04T11:46:29.377+0530] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): api_extract_load> on 2023-07-03 00:00:00+00:00
-[2023-07-04T11:46:29.380+0530] {standard_task_runner.py:57} INFO - Started process 1935 to run task
-[2023-07-04T11:46:29.384+0530] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'stackexchange_elt', 'api_extract_load', 'scheduled__2023-07-03T00:00:00+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/load_data_dag.py', '--cfg-path', '/var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T/tmp_my3o7ro']
-[2023-07-04T11:46:29.385+0530] {standard_task_runner.py:85} INFO - Job 43: Subtask api_extract_load
-[2023-07-04T11:46:29.413+0530] {task_command.py:410} INFO - Running <TaskInstance: stackexchange_elt.api_extract_load scheduled__2023-07-03T00:00:00+00:00 [running]> on host shubhams-macbook-air.local
-[2023-07-04T11:46:29.446+0530] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your-email@example.com' AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='stackexchange_elt' AIRFLOW_CTX_TASK_ID='api_extract_load' AIRFLOW_CTX_EXECUTION_DATE='2023-07-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-03T00:00:00+00:00'
-[2023-07-04T11:46:29.448+0530] {subprocess.py:63} INFO - Tmp dir root location: /var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T
-[2023-07-04T11:46:29.449+0530] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl http://localhost:8000/load-data']
-[2023-07-04T11:46:29.454+0530] {subprocess.py:86} INFO - Output:
-[2023-07-04T11:46:29.469+0530] {subprocess.py:93} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-[2023-07-04T11:46:29.469+0530] {subprocess.py:93} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
-[2023-07-04T11:46:29.470+0530] {subprocess.py:93} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-[2023-07-04T11:46:29.470+0530] {subprocess.py:93} INFO - curl: (7) Failed to connect to localhost port 8000 after 4 ms: Couldn't connect to server
-[2023-07-04T11:46:29.470+0530] {subprocess.py:97} INFO - Command exited with return code 7
-[2023-07-04T11:46:29.475+0530] {taskinstance.py:1824} ERROR - Task failed with exception
-Traceback (most recent call last):
-  File "/Users/shubhampriyadarshi/.pyenv/versions/3.9.16/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
-    raise AirflowException(
-airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 7.
-[2023-07-04T11:46:29.477+0530] {taskinstance.py:1345} INFO - Marking task as UP_FOR_RETRY. dag_id=stackexchange_elt, task_id=api_extract_load, execution_date=20230703T000000, start_date=20230704T061629, end_date=20230704T061629
-[2023-07-04T11:46:29.483+0530] {standard_task_runner.py:104} ERROR - Failed to execute job 43 for task api_extract_load (Bash command failed. The command returned a non-zero exit code 7.; 1935)
-[2023-07-04T11:46:29.491+0530] {local_task_job_runner.py:225} INFO - Task exited with return code 1
-[2023-07-04T11:46:29.514+0530] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
