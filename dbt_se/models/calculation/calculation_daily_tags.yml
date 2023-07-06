@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: daily_tags
+    tests:
+      - not_null:
+          column_name: date
+      - not_null:
+          column_name: name
+      - not_null:
+          column_name: daily_count

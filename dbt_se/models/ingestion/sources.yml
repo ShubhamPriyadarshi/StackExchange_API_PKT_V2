@@ -1,0 +1,9 @@
+# models/sources.yml
+version: 2
+
+sources:
+  - name: ingestion
+    database: PKT_STACKEXCHANGE
+    schema: DBT_INGESTION
+    tables:
+      - name: tags
