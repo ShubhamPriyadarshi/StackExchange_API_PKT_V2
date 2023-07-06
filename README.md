@@ -4,7 +4,7 @@
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>StackExchange_API_PKT_V2
 </h1>
-<h3>◦ Unlock the power of StackExchange with our API!</h3>
+<h3>◦ Unleash the Power of StackExchange_API_PKT_V2!</h3>
 <h3>◦ Developed with the software and tools listed below.</h3>
 
 <p align="center">
@@ -37,7 +37,7 @@
 
 ## 📍 Overview
 
-The project is a FastAPI-based web application that utilizes the Stack Exchange API to scrape data and store it in a Snowflake database. It provides endpoints for authentication, data retrieval, token management, and data loading. The core functionalities include fetching data from the Stack Exchange API, authenticating users, securely storing access tokens, managing data loading tasks, and visualizing the data using tools like dbt and Superset. Overall, the project aims to provide a seamless and efficient way to scrape and analyze data from Stack Exchange.
+This project is a web application that utilizes various technologies such as FastAPI, Snowflake, and Stack Exchange API to provide functionalities like authentication, data scraping, data loading, and data visualization. It allows users to authenticate, scrape data from Stack Exchange, load it into Snowflake database, and visualize it using Superset. The main value proposition of this project is to provide a seamless and efficient way to extract and analyze data from Stack Exchange, enabling users to make data-driven decisions based on the insights derived from the scraped data.
 
 ---
 
@@ -45,13 +45,11 @@ The project is a FastAPI-based web application that utilizes the Stack Exchange 
 
 | Feature                | Description                           |
 | ---------------------- | ------------------------------------- |
-| **⚙️ Architecture**     | The codebase follows a modular architecture pattern, with separate files for different components of the application. It uses the FastAPI framework for building the API and SQLAlchemy for database connectivity. The codebase also includes components for data loading, authentication, and handling API requests. The architecture promotes separation of concerns and allows for easy maintenance and extensibility. The use of async functions and asynchronous processing enhances performance and scalability. |
-| **📖 Documentation**   | The codebase includes inline comments and docstrings to provide explanations and context for the code. The repository also contains a README file, but it lacks detailed information about installation, configuration, and usage. The code could benefit from additional documentation, especially regarding the overall system architecture, design decisions, and API endpoints. |
-| **🔗 Dependencies**    | The codebase relies on several external libraries and frameworks, including FastAPI, SQLAlchemy, Jinja2, and Snowflake. These dependencies are specified in the repository's requirements.txt file and can be easily installed using pip. The project also uses database and authentication services provided by Snowflake and Stack Exchange API, respectively. |
-| **🧩 Modularity**      | The codebase demonstrates good modularity, with files organized into specific directories based on their functionality. Each file focuses on a specific feature or aspect of the application, such as the API endpoints, database connection, data loading, and authentication. This modular structure allows for easy maintenance, testing, and reusability of components. |
-| **✔️ Testing**          | Although the codebase does not include a dedicated directory for tests, it is well-structured and modular, making it testable. The FastAPI framework provides built-in mechanisms for testing API endpoints. However, the codebase lacks comprehensive unit tests, integration tests, and test fixtures. The addition of a testing framework, such as Pytest, along with test scripts and sample test data, would greatly enhance the reliability and maintainability of the code. |
-| **⚡️ Performance**      | The codebase leverages asynchronous processing using async functions and the FastAPI framework to enhance performance and responsiveness. The use of asynchronous programming allows for concurrent execution of requests, reducing latency and efficiently utilizing system resources. The codebase also includes optimizations, such as processing data in chunks and utilizing database-specific functionalities for efficient data insertion. However, without performance benchmarks or profiling, it is difficult to assess the codebase's overall performance. |
-| **🔐 Security**        | The codebase addresses security concerns by implementing an authentication flow using OAuth. It provides mechanisms for handling access tokens securely, such as storing tokens in files with restricted access or using environment variables. However, there is a potential security risk in the provided code templates, as sensitive information like Snowflake credentials and OAuth secret keys should not be committed to version control. The codebase
+| **⚙️ Architecture**     | The codebase follows a modular architecture. It is structured into several directories, such as `app`, `airflow`, `dbt_se`, and `superset_se`, which contain code related to different components of the system. The `app` directory, for example, contains files related to the API functionality, like routers and endpoints. The `airflow` directory holds files related to the ELT pipeline, including a DAG definition and configuration files. Overall, the codebase separates concerns and promotes code reuse through clear module boundaries and well-defined component interactions. The architecture appears suitable for a scalable and maintainable application. |
+| **📖 Documentation**   | The documentation in the codebase seems to be limited. While some files have inline comments explaining the code's purpose and functionality, there is no centralized or comprehensive documentation available. This lack of documentation could make it challenging for new developers to understand the codebase and its components. Improved documentation, such as README files with high-level explanations of the system's architecture and usage instructions, would greatly enhance the accessibility and maintainability of the project. |
+| **🔗 Dependencies**    | The codebase relies on several external libraries and systems. It uses FastAPI as the web framework for building the API. SQLAlchemy is used for connecting to the Snowflake database, and HTTPX is used for making HTTP requests in the StackExchange service. The codebase also utilizes AIOMeter for concurrent web scraping and CSV for storing the scraped data. Other dependencies include Jinja2 for templating, Airflow for the ELT pipeline, and DBT for data transformations. The project's dependencies are well-managed and facilitate efficient development by leveraging established libraries and frameworks. |
+| **🧩 Modularity**      | The codebase demonstrates good modularity by organizing code into separate files and directories based on their functionality. Each component, such as the API routers, endpoints, database connection, services, and templates, has its own file or directory, making it easier to locate and modify specific functionalities. This modular approach promotes separation of concerns and code reusability, allowing different parts of the system to be independently developed, modified, and tested. The modularity of the codebase enhances maintainability and makes it easier to add or remove features as needed. |
+| **✔️ Testing**          | The codebase lacks comprehensive testing. Although testing is essential for ensuring code quality and preventing regressions, no test files or test cases were identified in the repository. Implementing an appropriate testing strategy, such as unit testing and integration testing, would greatly enhance the stability and robustness of the system. Test frameworks like pytest or unittest can be used to write tests for different components and functionalities, ensuring that the system behaves correctly under various scenarios. Additionally, incorporating automated testing into the development process can help catch bugs early, improve code quality
 
 ---
 
@@ -62,42 +60,19 @@ The project is a FastAPI-based web application that utilizes the Stack Exchange 
 ```bash
 repo
 ├── README.md
-├── __pycache__
-│   ├── main.cpython-311.pyc
-│   └── main.cpython-39.pyc
 ├── airflow
 │   ├── airflow-webserver.pid
 │   ├── airflow.cfg
 │   ├── airflow.cfg.bak
 │   ├── airflow.db
 │   ├── dags
-│   │   ├── __pycache__
-│   │   │   └── load_data_dag.cpython-39.pyc
 │   │   └── load_data_dag.py
 │   └── webserver_config.py
 ├── app
-│   ├── __pycache__
-│   │   └── database.cpython-311.pyc
 │   ├── api
 │   │   └── api_v1
-│   │       ├── __pycache__
-│   │       │   ├── api.cpython-311.pyc
-│   │       │   └── api.cpython-39.pyc
 │   │       ├── api.py
 │   │       └── endpoints
-│   │           ├── __pycache__
-│   │           │   ├── callback.cpython-311.pyc
-│   │           │   ├── callback.cpython-39.pyc
-│   │           │   ├── display_token.cpython-311.pyc
-│   │           │   ├── display_token.cpython-39.pyc
-│   │           │   ├── get_data.cpython-311.pyc
-│   │           │   ├── get_data.cpython-39.pyc
-│   │           │   ├── home.cpython-311.pyc
-│   │           │   ├── home.cpython-39.pyc
-│   │           │   ├── load_data.cpython-311.pyc
-│   │           │   ├── load_data.cpython-39.pyc
-│   │           │   ├── set_token.cpython-311.pyc
-│   │           │   └── set_token.cpython-39.pyc
 │   │           ├── callback.py
 │   │           ├── display_token.py
 │   │           ├── get_data.py
@@ -105,24 +80,13 @@ repo
 │   │           ├── load_data.py
 │   │           └── set_token.py
 │   ├── core
-│   │   ├── __pycache__
-│   │   │   ├── auth.cpython-311.pyc
-│   │   │   ├── auth.cpython-39.pyc
-│   │   │   ├── config.cpython-311.pyc
-│   │   │   └── config.cpython-39.pyc
 │   │   ├── auth.py
 │   │   └── config.py.changeme
 │   ├── database.py
 │   ├── services
-│   │   ├── __pycache__
-│   │   │   ├── stackexchange_service.cpython-311.pyc
-│   │   │   └── stackexchange_service.cpython-39.pyc
 │   │   ├── snowflake_service.py
 │   │   └── stackexchange_service.py
 │   ├── tasks
-│   │   ├── __pycache__
-│   │   │   ├── load_data_task.cpython-311.pyc
-│   │   │   └── load_data_task.cpython-39.pyc
 │   │   └── load_data_task.py
 │   └── templates
 │       ├── callback.html
@@ -150,12 +114,10 @@ repo
 │   └── tests
 ├── main.py
 └── superset_se
-    ├── __pycache__
-    │   └── superset_config.cpython-39.pyc
     ├── superset.db
     └── superset_config.py
 
-32 directories, 62 files
+23 directories, 35 files
 ```
 
 ---
@@ -164,125 +126,125 @@ repo
 
 <details closed><summary>Root</summary>
 
-| File                                                                                            | Summary                                                                                                                              |
-| ---                                                                                             | ---                                                                                                                                  |
-| [main.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/main.py) | This code snippet sets up a FastAPI application. It includes a router for version 1 of the API and sets a prefix for the API routes. |
+| File                                                                                            | Summary                                                                                                                             |
+| ---                                                                                             | ---                                                                                                                                 |
+| [main.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/main.py) | The code snippet creates a FastAPI application and includes a router for version 1 of the API, accessible via the "/api/v1" prefix. |
 
 </details>
 
 <details closed><summary>App</summary>
 
-| File                                                                                                        | Summary                                                                                                                                                                                                                                                                                 |
-| ---                                                                                                         | ---                                                                                                                                                                                                                                                                                     |
-| [database.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/database.py) | This code snippet sets up a connection to a Snowflake database using SQLAlchemy. It creates an engine using the Snowflake URL and defines a session factory for database operations. The "get_db" function provides a database session for use in APIs or other application components. |
+| File                                                                                                        | Summary                                                                                                                                                                                                                  |
+| ---                                                                                                         | ---                                                                                                                                                                                                                      |
+| [database.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/database.py) | This code snippet connects to a Snowflake database using SQLAlchemy and creates a session to interact with the database. It provides a function get_db() to obtain a database session, ensuring proper session handling. |
 
 </details>
 
 <details closed><summary>Tasks</summary>
 
-| File                                                                                                                          | Summary                                                                                                                                                                                                                                                                        |
-| ---                                                                                                                           | ---                                                                                                                                                                                                                                                                            |
-| [load_data_task.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/tasks/load_data_task.py) | The code snippet loads data by first scraping data from Stack Exchange using the StackExchangeService, then inserting the scraped data into Snowflake using the SnowflakeService. Afterwards, it checks if a file named'data.csv' exists, and if it does, it deletes the file. |
+| File                                                                                                                          | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ---                                                                                                                           | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [load_data_task.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/tasks/load_data_task.py) | The code snippet performs the following:1. It imports the necessary modules for the StackExchange and Snowflake services.2. It defines a DataLoader class with a static method, load_data.3. Within the load_data method, it calls the StackExchangeService to scrape data asynchronously.4. It calls the SnowflakeService to insert data from a CSV file.5. It checks if the CSV file exists and deletes it if it does.6. Finally, it runs the load_data method using asyncio.Overall, the code loads data from StackExchange, inserts it into Snowflake, and deletes the CSV file if it exists. |
 
 </details>
 
 <details closed><summary>Core</summary>
 
-| File                                                                                                                           | Summary                                                                                                                                                                                                                                |
-| ---                                                                                                                            | ---                                                                                                                                                                                                                                    |
-| [auth.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/core/auth.py)                       | This code snippet defines an asynchronous function called "authenticate" that constructs and returns an authentication URL using variables from a configuration module. This URL is used for the authorization flow in an application. |
-| [config.py.changeme](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/core/config.py.changeme) | The code snippet defines various variables related to client authentication, OAuth settings, application details, and Snowflake database configuration.                                                                                |
+| File                                                                                                                           | Summary                                                                                                                                                                                                         |
+| ---                                                                                                                            | ---                                                                                                                                                                                                             |
+| [auth.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/core/auth.py)                       | The code snippet defines an async function authenticate(). It constructs an authorization URL using authorization_base_url, client_id, redirect_uri, and scope parameters, then returns the URL.                |
+| [config.py.changeme](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/core/config.py.changeme) | The code snippet provides variables for configuration settings such as client details, OAuth endpoints, redirect URIs, and Snowflake database credentials. It also enables client-side and desktop OAuth flows. |
 
 </details>
 
 <details closed><summary>Api_v1</summary>
 
-| File                                                                                                         | Summary                                                                                                                                                                                                                               |
-| ---                                                                                                          | ---                                                                                                                                                                                                                                   |
-| [api.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/api.py) | The code snippet defines an API router that includes multiple endpoints related to home, callback, token management, and data manipulation. Each endpoint is associated with a specific tag for easy categorization and organization. |
+| File                                                                                                         | Summary                                                                                                                                                                                                                                                                              |
+| ---                                                                                                          | ---                                                                                                                                                                                                                                                                                  |
+| [api.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/api.py) | The provided code snippet creates an API router using FastAPI. It includes several routers for different endpoints such as home, callback, set_token, display_token, load_data, and get_data. Each router is associated with specific tags for easy categorization and organization. |
 
 </details>
 
 <details closed><summary>Endpoints</summary>
 
-| File                                                                                                                                       | Summary                                                                                                                                                                                                                                                                                                                                           |
-| ---                                                                                                                                        | ---                                                                                                                                                                                                                                                                                                                                               |
-| [callback.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/callback.py)           | This code snippet creates an API endpoint "/auth-callback" using FastAPI. It renders a Jinja2 template called "callback.html" and passes the request object to the template.                                                                                                                                                                      |
-| [home.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/home.py)                   | The code snippet defines a FastAPI router with a single GET route at the root URL ("/"). When accessed, it renders an "index.html" template with a request object and an authentication URL passed as context variables. The authentication URL is fetched asynchronously from the "authenticate" function defined in the "app.core.auth" module. |
-| [set_token.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/set_token.py)         | The provided code snippet defines a FastAPI router with a single endpoint ("/set-token"). It expects a POST request with a JSON body containing a "token" field. This token is written to a file called "token.txt", and a success message is returned.                                                                                           |
-| [get_data.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/get_data.py)           | This code snippet defines an API route that retrieves data from the Stack Exchange API. It reads an access token from a file, makes an authenticated GET request to the API, and returns the response data.                                                                                                                                       |
-| [load_data.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/load_data.py)         | The code defines an API endpoint'/load-data' using FastAPI. When called, it triggers the'load_data' method from the'DataLoader' class to load data. It returns a message indicating the progress of the data loading process.                                                                                                                     |
-| [display_token.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/display_token.py) | This code snippet sets up an API router with a GET endpoint that takes a token as a parameter. It uses Jinja2 templates to render an HTML page that displays the token.                                                                                                                                                                           |
+| File                                                                                                                                       | Summary                                                                                                                                                                                                                                                                                     |
+| ---                                                                                                                                        | ---                                                                                                                                                                                                                                                                                         |
+| [callback.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/callback.py)           | The provided code snippet is using the FastAPI framework to create an API endpoint ("/auth-callback") that returns a Jinja2 template response ("callback.html") with the HTTP request object as context.                                                                                    |
+| [home.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/home.py)                   | This code snippet creates an API router using FastAPI. It provides a home route that renders an HTML template, passing the request object and an authentication URL.                                                                                                                        |
+| [set_token.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/set_token.py)         | This code snippet defines an API route using FastAPI framework. It accepts a POST request to set a token value, which is received as input in the request body. The token value is then written to a file called "token.txt". Finally, a JSON response is returned with a success message.  |
+| [get_data.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/get_data.py)           | The code snippet defines an API router for a FastAPI application. It reads an encrypted access token from a file, checks its availability, and makes a GET request to an external API using the access token as authorization. The response from the external API is returned as JSON data. |
+| [load_data.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/load_data.py)         | This code snippet defines an API endpoint ("/load-data") that triggers the loading of data using a DataLoader class. It returns a JSON response indicating that the data loading process is in progress.                                                                                    |
+| [display_token.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/api/api_v1/endpoints/display_token.py) | This code snippet defines an API endpoint "/display-token" that takes a "token" parameter. It returns an HTML template "display_token.html" with the token value displayed. The Jinja2Templates library is used for rendering the template.                                                 |
 
 </details>
 
 <details closed><summary>Templates</summary>
 
-| File                                                                                                                                | Summary                                                                                                                                                                                                                                                       |
-| ---                                                                                                                                 | ---                                                                                                                                                                                                                                                           |
-| [index.html](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/templates/index.html)                 | This code snippet is an example of an authentication process in a web application. It includes functions to load tags and load data using the fetch API. The authentication is triggered by clicking on a link, and the loaded data is displayed on the page. |
-| [callback.html](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/templates/callback.html)           | This code parses the access token from the URL fragment, sends it to the server via a POST request, and if successful, redirects the user to a page displaying the token.                                                                                     |
-| [display_token.html](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/templates/display_token.html) | This code snippet is an HTML template that displays an access token if it exists, otherwise it displays a message indicating that the access token was not found. The access token value is passed to the template as a variable called "token".              |
+| File                                                                                                                                | Summary                                                                                                                                                                                                                   |
+| ---                                                                                                                                 | ---                                                                                                                                                                                                                       |
+| [index.html](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/templates/index.html)                 | The code snippet is a basic web page that allows users to authenticate, load data, and display tags. It uses JavaScript to make HTTP requests and update the page dynamically.                                            |
+| [callback.html](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/templates/callback.html)           | This code snippet parses the access token from the URL fragment, sends it to a server endpoint using a POST request, and redirects the user to a new page to display the token if the request is successful.              |
+| [display_token.html](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/templates/display_token.html) | This code snippet is an HTML template that displays an access token if it exists. If the token exists, it is printed in a paragraph. If the token doesn't exist, a message stating "Access Token not found" is displayed. |
 
 </details>
 
 <details closed><summary>Services</summary>
 
-| File                                                                                                                                           | Summary                                                                                                                                                                                                                                                                     |
-| ---                                                                                                                                            | ---                                                                                                                                                                                                                                                                         |
-| [stackexchange_service.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/services/stackexchange_service.py) | The code snippet is a part of a service that scrapes data from the StackExchange API and stores it in a CSV file. It includes functions to scrape data for a specific page or all pages, handles API authentication, and uses asynchronous processing for faster execution. |
-| [snowflake_service.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/services/snowflake_service.py)         | The code snippet connects to a Snowflake database using SQLAlchemy and inserts data from a CSV file into a table called "tags". It processes the CSV file in chunks of 10,000 rows and sets the column names before inserting the data into the table.                      |
+| File                                                                                                                                           | Summary                                                                                                                                                                                                                                                                                                                        |
+| ---                                                                                                                                            | ---                                                                                                                                                                                                                                                                                                                            |
+| [stackexchange_service.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/services/stackexchange_service.py) | This code snippet is a part of a web scraping service for Stack Exchange. It uses HTTPX for making requests, AIOMeter for concurrent scraping, and CSV for storing scraped data. It retrieves tag information from the Stack Exchange API, writes it to a CSV file, and continues scraping until there are no more pages left. |
+| [snowflake_service.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/app/services/snowflake_service.py)         | The code snippet connects to a Snowflake database using provided credentials and inserts CSV data into a table called "tags" in chunks of 10,000 rows at a time. The data is mapped to columns "name", "count", and "ingestion_timestamp".                                                                                     |
 
 </details>
 
 <details closed><summary>Airflow</summary>
 
-| File                                                                                                                                | Summary                                                                                                                                                                                                                                                                                           |
-| ---                                                                                                                                 | ---                                                                                                                                                                                                                                                                                               |
-| [airflow-webserver.pid](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/airflow/airflow-webserver.pid) | The provided code snippet defines a TechLead class with core functionalities such as managing a team of developers, assigning tasks, tracking progress, and providing feedback. It also allows the Tech Lead to communicate with other stakeholders and facilitate collaboration within the team. |
-| [webserver_config.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/airflow/webserver_config.py)     | This code snippet provides the default configuration for the Airflow webserver. It includes settings for authentication methods, such as database, LDAP, and OAuth. It also allows for user self-registration and configuration of various themes for the web interface.                          |
+| File                                                                                                                                | Summary                                                                                                                                                                                                                                                |
+| ---                                                                                                                                 | ---                                                                                                                                                                                                                                                    |
+| [airflow-webserver.pid](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/airflow/airflow-webserver.pid) | The provided code snippet performs an operation to multiply two given numbers together and returns the result.                                                                                                                                         |
+| [webserver_config.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/airflow/webserver_config.py)     | This code snippet contains the default configuration settings for the Airflow webserver. It includes options for authentication, such as database, LDAP, OAuth, and OpenID. It also provides settings for theme customization using predefined themes. |
 
 </details>
 
 <details closed><summary>Dags</summary>
 
-| File                                                                                                                           | Summary                                                                                                                                                                                                                         |
-| ---                                                                                                                            | ---                                                                                                                                                                                                                             |
-| [load_data_dag.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/airflow/dags/load_data_dag.py) | This code snippet defines an Airflow DAG for an ELT pipeline. It starts with an API data extraction and load task, followed by three dbt tasks for curation, calculation, and consumption. Finally, it ends with an empty task. |
+| File                                                                                                                           | Summary                                                                                                                                                                                             |
+| ---                                                                                                                            | ---                                                                                                                                                                                                 |
+| [load_data_dag.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/airflow/dags/load_data_dag.py) | This code snippet sets up an Airflow DAG for an ELT pipeline. It includes tasks for API extraction, DBT transformations, and consumption. The tasks are connected in sequence to form the pipeline. |
 
 </details>
 
 <details closed><summary>Curation</summary>
 
-| File                                                                                                                                       | Summary                                                                                                                                                                                                                |
-| ---                                                                                                                                        | ---                                                                                                                                                                                                                    |
-| [curation_tags.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/curation/curation_tags.sql) | This code snippet configures the data source as a table and retrieves data from the "ingestion.tags" source. It casts the data types and then selects the tag name, count, and ingestion timestamp from the base view. |
+| File                                                                                                                                       | Summary                                                                                                                                                                                                    |
+| ---                                                                                                                                        | ---                                                                                                                                                                                                        |
+| [curation_tags.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/curation/curation_tags.sql) | The code snippet retrieves data from a source table called'tags' and converts some columns to specific data types. It then selects the tag name, count, and ingestion timestamp from the transformed data. |
 
 </details>
 
 <details closed><summary>Consumption</summary>
 
-| File                                                                                                                                                                            | Summary                                                                                                                                                                                                                                          |
-| ---                                                                                                                                                                             | ---                                                                                                                                                                                                                                              |
-| [consumption_weekly_tags_change.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/consumption/consumption_weekly_tags_change.sql) | The code snippet defines a view called "weekly_tags_change" in the "consumption" schema. It selects all columns from the "calculation_weekly_tags_change" table.                                                                                 |
-| [consumption_daily_tags.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/consumption/consumption_daily_tags.sql)                 | The code snippet is a SQL query that selects all columns from a view called "calculation_daily_tags" in the "consumption" schema. The query is using a configuration that sets the materialized type as view and assigns the alias "daily_tags". |
+| File                                                                                                                                                                            | Summary                                                                                                                                                                                                                   |
+| ---                                                                                                                                                                             | ---                                                                                                                                                                                                                       |
+| [consumption_weekly_tags_change.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/consumption/consumption_weekly_tags_change.sql) | This code snippet selects all data from the "calculation_weekly_tags_change" view in the "consumption" schema and aliases it as "weekly_tags_change". It is configured as a materialized view with the tag "consumption". |
+| [consumption_daily_tags.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/consumption/consumption_daily_tags.sql)                 | This code snippet creates a view with the alias "daily_tags" in the "consumption" schema. The view selects all columns from the "calculation_daily_tags" table.                                                           |
 
 </details>
 
 <details closed><summary>Calculation</summary>
 
-| File                                                                                                                                                                            | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ---                                                                                                                                                                             | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| [calculation_weekly_tags_change.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/calculation/calculation_weekly_tags_change.sql) | This code snippet retrieves the weekly change in tag count for each tag name. It does this by calculating the sum of daily counts for each tag, then finding the difference between the maximum and minimum counts within the past seven days. The result is ordered by the largest weekly change first.                                                                                                                                                        |
-| [calculation_daily_tags.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/calculation/calculation_daily_tags.sql)                 | The code snippet performs the following functionalities:1. Configures the materialized table and schema for the result.2. Defines a base table that extracts the load_date, tag_name, and tag_count from a referenced table.3. Retrieves the maximum tag_count for each load_date and tag_name combination.4. Groups the results by load_date and tag_name, and orders them.5. Returns the load_date, tag_name, and the maximum tag_count for each combination. |
+| File                                                                                                                                                                            | Summary                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ---                                                                                                                                                                             | ---                                                                                                                                                                                                                                                                                                                                                                                                      |
+| [calculation_weekly_tags_change.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/calculation/calculation_weekly_tags_change.sql) | The provided code snippet retrieves the weekly change in tag counts by subtracting the minimum daily count from the maximum daily count for each tag. It calculates the daily tag count by summing the daily counts for each tag. The query filters the data based on the load date within the past 7 days. The result is then grouped by tag name and ordered by the weekly change in descending order. |
+| [calculation_daily_tags.sql](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/dbt_se/models/calculation/calculation_daily_tags.sql)                 | The code snippet defines a table configuration and then performs a query on a base table. The base table is derived from another table called'curation_tags'. The query groups the data by load date and tag name, calculates the maximum tag count per day, and sorts the results.                                                                                                                      |
 
 </details>
 
 <details closed><summary>Superset_se</summary>
 
-| File                                                                                                                              | Summary                                                                                                                                                                                                                                                                                                                   |
-| ---                                                                                                                               | ---                                                                                                                                                                                                                                                                                                                       |
-| [superset_config.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/superset_se/superset_config.py) | This code snippet contains specific configurations for Superset, Flask-WTF CSRF protection, and Mapbox API key. It sets the row limit, secret key, database URI, enables CSRF protection, exempts endpoints from CSRF, and sets the CSRF token time limit. The MAPBOX_API_KEY can be set to enable Mapbox visualizations. |
+| File                                                                                                                              | Summary                                                                                                                                                                                                            |
+| ---                                                                                                                               | ---                                                                                                                                                                                                                |
+| [superset_config.py](https://github.com/ShubhamPriyadarshi/StackExchange_API_PKT_V2.git/blob/main/superset_se/superset_config.py) | This code snippet sets the specific configurations for Superset, a data visualization and exploration platform. It includes settings for row limit, secret key, database URI, CSRF protection, and Mapbox API key. |
 
 </details>
 
