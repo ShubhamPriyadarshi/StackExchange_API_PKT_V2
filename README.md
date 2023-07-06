@@ -23,14 +23,11 @@
 ## 📒 Table of Contents
 - [📒 Table of Contents](#-table-of-contents)
 - [📍 Overview](#-overview)
-- [⚙️ Features](#-features)
 - [📂 Project Structure](#project-structure)
 - [🧩 Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
 - [🗺 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👏 Acknowledgments](#-acknowledgments)
 
 ---
 
@@ -38,18 +35,6 @@
 ## 📍 Overview
 
 This project is a web application that utilizes various technologies such as FastAPI, Snowflake, and Stack Exchange API to provide functionalities like authentication, data scraping, data loading, and data visualization. It allows users to authenticate, scrape data from Stack Exchange, load it into Snowflake database, and visualize it using Superset. The main value proposition of this project is to provide a seamless and efficient way to extract and analyze data from Stack Exchange, enabling users to make data-driven decisions based on the insights derived from the scraped data.
-
----
-
-## ⚙️ Features
-
-| Feature                | Description                           |
-| ---------------------- | ------------------------------------- |
-| **⚙️ Architecture**     | The codebase follows a modular architecture. It is structured into several directories, such as `app`, `airflow`, `dbt_se`, and `superset_se`, which contain code related to different components of the system. The `app` directory, for example, contains files related to the API functionality, like routers and endpoints. The `airflow` directory holds files related to the ELT pipeline, including a DAG definition and configuration files. Overall, the codebase separates concerns and promotes code reuse through clear module boundaries and well-defined component interactions. The architecture appears suitable for a scalable and maintainable application. |
-| **📖 Documentation**   | The documentation in the codebase seems to be limited. While some files have inline comments explaining the code's purpose and functionality, there is no centralized or comprehensive documentation available. This lack of documentation could make it challenging for new developers to understand the codebase and its components. Improved documentation, such as README files with high-level explanations of the system's architecture and usage instructions, would greatly enhance the accessibility and maintainability of the project. |
-| **🔗 Dependencies**    | The codebase relies on several external libraries and systems. It uses FastAPI as the web framework for building the API. SQLAlchemy is used for connecting to the Snowflake database, and HTTPX is used for making HTTP requests in the StackExchange service. The codebase also utilizes AIOMeter for concurrent web scraping and CSV for storing the scraped data. Other dependencies include Jinja2 for templating, Airflow for the ELT pipeline, and DBT for data transformations. The project's dependencies are well-managed and facilitate efficient development by leveraging established libraries and frameworks. |
-| **🧩 Modularity**      | The codebase demonstrates good modularity by organizing code into separate files and directories based on their functionality. Each component, such as the API routers, endpoints, database connection, services, and templates, has its own file or directory, making it easier to locate and modify specific functionalities. This modular approach promotes separation of concerns and code reusability, allowing different parts of the system to be independently developed, modified, and tested. The modularity of the codebase enhances maintainability and makes it easier to add or remove features as needed. |
-| **✔️ Testing**          | The codebase lacks comprehensive testing. Although testing is essential for ensuring code quality and preventing regressions, no test files or test cases were identified in the repository. Implementing an appropriate testing strategy, such as unit testing and integration testing, would greatly enhance the stability and robustness of the system. Test frameworks like pytest or unittest can be used to write tests for different components and functionalities, ensuring that the system behaves correctly under various scenarios. Additionally, incorporating automated testing into the development process can help catch bugs early, improve code quality
 
 ---
 
@@ -279,13 +264,9 @@ pip install -r requirements.txt
 ### 🎮 Using StackExchange_API_PKT_V2
 
 ```sh
-python main.py
+uvicorn main:app
 ```
 
-### 🧪 Running Tests
-```sh
-pytest
-```
 
 ---
 
@@ -319,17 +300,5 @@ git push origin new-feature-branch
 ```
 7. Create a new pull request to the original project repository. In the pull request, describe the changes you've made and why they're necessary.
 The project maintainers will review your changes and provide feedback or merge them into the main branch.
-
----
-
-## 📄 License
-
-This project is licensed under the `ℹ️  INSERT-LICENSE-TYPE` License. See the [LICENSE](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository) file for additional info.
-
----
-
-## 👏 Acknowledgments
-
-> - `ℹ️  List any resources, contributors, inspiration, etc.`
 
 ---
