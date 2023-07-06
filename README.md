@@ -2,9 +2,9 @@
 <div align="center">
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
-<br>StackExchange_API_PKT_V2
+<br>Stack Exchange Data Visualizer
 </h1>
-<h3>◦ Unleash the Power of StackExchange_API_PKT_V2!</h3>
+<h3>◦ ELT and Visualization of StackExchange data</h3>
 <h3>◦ Developed with the software and tools listed below.</h3>
 
 <p align="center">
@@ -35,7 +35,7 @@
 
 ## 📍 Overview
 
-This project is a web application that utilizes various technologies such as FastAPI, Snowflake, and Stack Exchange API to provide functionalities like authentication, data scraping, data loading, and data visualization. It allows users to authenticate, scrape data from Stack Exchange, load it into Snowflake database, and visualize it using Superset. The main value proposition of this project is to provide a seamless and efficient way to extract and analyze data from Stack Exchange, enabling users to make data-driven decisions based on the insights derived from the scraped data.
+This web application combines FastAPI, Snowflake, Stack Exchange API, Superset, and Airflow to create a user-friendly tool for data extraction and analysis. In simple terms, it lets users log in, gather data from Stack Exchange, store this data in the Snowflake database, and create easy-to-understand visualizations with Superset. Moreover, it uses Airflow to automatically update the data every day. The main goal is to make it easy for users to understand and use Stack Exchange data to help them make informed decisions.
 
 ---
 
