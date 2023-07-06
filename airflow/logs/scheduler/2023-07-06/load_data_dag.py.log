@@ -1097,3 +1097,17 @@
 [2023-07-06T18:15:27.650+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:15:27.650+0530] {dag.py:2726} INFO - Sync 1 DAGs
 [2023-07-06T18:15:27.670+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:15:27.670+0530] {dag.py:3486} INFO - Setting next_dagrun for stackexchange_elt to 2023-07-06T00:00:00+00:00, run_after=2023-07-07T00:00:00+00:00
 [2023-07-06T18:15:27.688+0530] {processor.py:179} INFO - Processing /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py took 0.665 seconds
+[2023-07-06T18:17:02.412+0530] {processor.py:157} INFO - Started process (PID=39289) to work on /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py
+[2023-07-06T18:17:02.413+0530] {processor.py:826} INFO - Processing file /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py for tasks to queue
+[2023-07-06T18:17:02.413+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:17:02.413+0530] {dagbag.py:541} INFO - Filling up the DagBag from /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py
+[2023-07-06T18:17:02.449+0530] {processor.py:836} INFO - DAG(s) dict_keys(['stackexchange_elt']) retrieved from /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py
+[2023-07-06T18:17:03.004+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:17:03.004+0530] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-07-06T18:17:03.018+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:17:03.017+0530] {dag.py:3486} INFO - Setting next_dagrun for stackexchange_elt to 2023-07-06T00:00:00+00:00, run_after=2023-07-07T00:00:00+00:00
+[2023-07-06T18:17:03.032+0530] {processor.py:179} INFO - Processing /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py took 0.621 seconds
+[2023-07-06T18:18:39.314+0530] {processor.py:157} INFO - Started process (PID=39453) to work on /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py
+[2023-07-06T18:18:39.315+0530] {processor.py:826} INFO - Processing file /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py for tasks to queue
+[2023-07-06T18:18:39.316+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:18:39.315+0530] {dagbag.py:541} INFO - Filling up the DagBag from /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py
+[2023-07-06T18:18:39.347+0530] {processor.py:836} INFO - DAG(s) dict_keys(['stackexchange_elt']) retrieved from /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py
+[2023-07-06T18:18:39.935+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:18:39.935+0530] {dag.py:2726} INFO - Sync 1 DAGs
+[2023-07-06T18:18:39.952+0530] {logging_mixin.py:149} INFO - [2023-07-06T18:18:39.952+0530] {dag.py:3486} INFO - Setting next_dagrun for stackexchange_elt to 2023-07-06T00:00:00+00:00, run_after=2023-07-07T00:00:00+00:00
+[2023-07-06T18:18:39.968+0530] {processor.py:179} INFO - Processing /Users/shubhampriyadarshi/PycharmProjects/StackExchange_API_PKT/airflow/dags/load_data_dag.py took 0.655 seconds
