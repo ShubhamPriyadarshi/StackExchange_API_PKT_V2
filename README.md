@@ -41,9 +41,16 @@ This project is a web application that utilizes various technologies such as Fas
 
 ## 🖼 Screenshots
 
-![Screenshot 2023-07-06 at 10.28.44 PM.png](screenshots%2FScreenshot%202023-07-06%20at%2010.28.44%20PM.png)
-![Screenshot 2023-07-06 at 10.29.03 PM.png](screenshots%2FScreenshot%202023-07-06%20at%2010.29.03%20PM.png)
-![Screenshot 2023-07-06 at 10.31.12 PM.png](screenshots%2FScreenshot%202023-07-06%20at%2010.31.12%20PM.png)
+  ### Superset
+  ![Screenshot 1](screenshots/Screenshot%202023-07-06%20at%2010.28.44%20PM.png)
+  
+  ### Airflow
+  ![Screenshot 2](screenshots/Screenshot%202023-07-06%20at%2010.29.03%20PM.png)
+  
+  ### Snowflake
+  ![Screenshot 3](screenshots/Screenshot%202023-07-06%20at%2010.31.12%20PM.png)
+
+
 ## 📂 Project Structure
 
 
