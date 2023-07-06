@@ -3,3 +3,5 @@ config.py
 venv/
 logs/
 *.log
+*.pyc
+__pycache__/
