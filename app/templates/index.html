@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication Example</title>
+    <script>
+    function loadTags() {
+        fetch("/data").then(response => response.json()).then(data => {
+            let tagContainer = document.getElementById('tagContainer');
+            data.items.forEach(tag => {
+                let tagElement = document.createElement('p');
+                tagElement.textContent = `${tag.name}: ${tag.count}`;
+                tagContainer.appendChild(tagElement);
+            });
+        }).catch(error => console.error('Error:', error));
+    }
+
+    function loadData() {
+        fetch("/load-data").then(response => response.json()).then(data => {
+            alert(data.message);
+        }).catch(error => console.error('Error:', error));
+    }
+    </script>
+</head>
+<body>
+    <h1>Authentication</h1>
+    <p>Click the button below to authenticate:</p>
+    <a href="{{ auth_url }}" onclick="loadTags()">Authenticate</a>
+    <button onclick="loadData()">Load Data</button>
+    <div id="tagContainer"></div>
+</body>
+</html>

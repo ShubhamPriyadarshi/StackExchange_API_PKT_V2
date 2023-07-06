@@ -1,0 +1,25 @@
+[2023-07-02T21:15:19.818+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_dag.run_etl manual__2023-07-02T15:42:22.363032+00:00 [queued]>
+[2023-07-02T21:15:19.824+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_dag.run_etl manual__2023-07-02T15:42:22.363032+00:00 [queued]>
+[2023-07-02T21:15:19.824+0530] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2023-07-02T21:15:19.834+0530] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): run_etl> on 2023-07-02 15:42:22.363032+00:00
+[2023-07-02T21:15:19.838+0530] {standard_task_runner.py:57} INFO - Started process 96419 to run task
+[2023-07-02T21:15:19.842+0530] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'load_data_dag', 'run_etl', 'manual__2023-07-02T15:42:22.363032+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/load_data_dag.py', '--cfg-path', '/var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T/tmpo8vvkghv']
+[2023-07-02T21:15:19.845+0530] {standard_task_runner.py:85} INFO - Job 9: Subtask run_etl
+[2023-07-02T21:15:19.888+0530] {task_command.py:410} INFO - Running <TaskInstance: load_data_dag.run_etl manual__2023-07-02T15:42:22.363032+00:00 [running]> on host shubhams-macbook-air.local
+[2023-07-02T21:15:19.929+0530] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your-email@example.com' AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='load_data_dag' AIRFLOW_CTX_TASK_ID='run_etl' AIRFLOW_CTX_EXECUTION_DATE='2023-07-02T15:42:22.363032+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-02T15:42:22.363032+00:00'
+[2023-07-02T21:15:19.930+0530] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/shubhampriyadarshi/PycharmProjects/PacktAPI/venv/lib/python3.11/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhampriyadarshi/PycharmProjects/PacktAPI/venv/lib/python3.11/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shubhampriyadarshi/PycharmProjects/PacktAPI/airflow/dags/load_data_dag.py", line 25, in call_endpoint
+    logging.info("About to call endpoint %s", url)
+    ^^^^^^^
+NameError: name 'logging' is not defined
+[2023-07-02T21:15:19.936+0530] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=load_data_dag, task_id=run_etl, execution_date=20230702T154222, start_date=20230702T154519, end_date=20230702T154519
+[2023-07-02T21:15:19.943+0530] {standard_task_runner.py:104} ERROR - Failed to execute job 9 for task run_etl (name 'logging' is not defined; 96419)
+[2023-07-02T21:15:19.947+0530] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-02T21:15:19.963+0530] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,19 @@
+<script>
+    // parse the URL fragment
+    let hash = window.location.hash.substring(1);
+    let params = new URLSearchParams(hash);
+    let access_token = params.get("access_token");
+
+    // send it to a new endpoint on the server
+    fetch("/set-token", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({token: access_token})
+    }).then(response => {
+        if (response.ok) {
+            window.location = `/display-token?token=${access_token}`;
+        }
+    });
+</script>

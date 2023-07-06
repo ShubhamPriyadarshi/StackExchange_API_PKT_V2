@@ -1,0 +1,14 @@
+[2023-07-02T21:45:58.287+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_dag.run_etl manual__2023-07-02T16:15:53.761785+00:00 [queued]>
+[2023-07-02T21:45:58.292+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_dag.run_etl manual__2023-07-02T16:15:53.761785+00:00 [queued]>
+[2023-07-02T21:45:58.292+0530] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-02T21:45:58.301+0530] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): run_etl> on 2023-07-02 16:15:53.761785+00:00
+[2023-07-02T21:45:58.305+0530] {standard_task_runner.py:57} INFO - Started process 99119 to run task
+[2023-07-02T21:45:58.310+0530] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'load_data_dag', 'run_etl', 'manual__2023-07-02T16:15:53.761785+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/load_data_dag.py', '--cfg-path', '/var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T/tmpid81t0kl']
+[2023-07-02T21:45:58.316+0530] {standard_task_runner.py:85} INFO - Job 30: Subtask run_etl
+[2023-07-02T21:45:58.349+0530] {task_command.py:410} INFO - Running <TaskInstance: load_data_dag.run_etl manual__2023-07-02T16:15:53.761785+00:00 [running]> on host shubhams-macbook-air.local
+[2023-07-02T21:45:58.395+0530] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your-email@example.com' AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='load_data_dag' AIRFLOW_CTX_TASK_ID='run_etl' AIRFLOW_CTX_EXECUTION_DATE='2023-07-02T16:15:53.761785+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-02T16:15:53.761785+00:00'
+[2023-07-02T22:03:12.507+0530] {process_utils.py:131} INFO - Sending 15 to group 99119. PIDs of all processes in the group: [99119]
+[2023-07-02T22:03:12.508+0530] {process_utils.py:86} INFO - Sending the signal 15 to group 99119
+[2023-07-02T22:03:19.490+0530] {taskinstance.py:1093} INFO - Dependencies not met for <TaskInstance: load_data_dag.run_etl manual__2023-07-02T16:15:53.761785+00:00 [running]>, dependency 'Task Instance State' FAILED: Task is in the 'running' state.
+[2023-07-02T22:03:19.490+0530] {taskinstance.py:1093} INFO - Dependencies not met for <TaskInstance: load_data_dag.run_etl manual__2023-07-02T16:15:53.761785+00:00 [running]>, dependency 'Task Instance Not Running' FAILED: Task is in the running state
+[2023-07-02T22:03:19.495+0530] {local_task_job_runner.py:154} INFO - Task is not able to be run

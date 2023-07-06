@@ -1,0 +1,23 @@
+[2023-07-04T11:51:34.931+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stackexchange_elt.dbt_curation scheduled__2023-07-02T00:00:00+00:00 [queued]>
+[2023-07-04T11:51:34.936+0530] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stackexchange_elt.dbt_curation scheduled__2023-07-02T00:00:00+00:00 [queued]>
+[2023-07-04T11:51:34.936+0530] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-04T11:51:34.944+0530] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): dbt_curation> on 2023-07-02 00:00:00+00:00
+[2023-07-04T11:51:34.948+0530] {standard_task_runner.py:57} INFO - Started process 3011 to run task
+[2023-07-04T11:51:34.952+0530] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'stackexchange_elt', 'dbt_curation', 'scheduled__2023-07-02T00:00:00+00:00', '--job-id', '46', '--raw', '--subdir', 'DAGS_FOLDER/load_data_dag.py', '--cfg-path', '/var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T/tmpzq3h4tjt']
+[2023-07-04T11:51:34.953+0530] {standard_task_runner.py:85} INFO - Job 46: Subtask dbt_curation
+[2023-07-04T11:51:34.982+0530] {task_command.py:410} INFO - Running <TaskInstance: stackexchange_elt.dbt_curation scheduled__2023-07-02T00:00:00+00:00 [running]> on host shubhams-macbook-air.local
+[2023-07-04T11:51:35.017+0530] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your-email@example.com' AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='stackexchange_elt' AIRFLOW_CTX_TASK_ID='dbt_curation' AIRFLOW_CTX_EXECUTION_DATE='2023-07-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-02T00:00:00+00:00'
+[2023-07-04T11:51:35.018+0530] {subprocess.py:63} INFO - Tmp dir root location: /var/folders/1q/9_fjtq3x20g5lbhb24f74l380000gn/T
+[2023-07-04T11:51:35.018+0530] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'dbt run --models tag:curation --profiles-dir .']
+[2023-07-04T11:51:35.023+0530] {subprocess.py:86} INFO - Output:
+[2023-07-04T11:51:35.030+0530] {subprocess.py:93} INFO - /bin/bash: dbt: command not found
+[2023-07-04T11:51:35.031+0530] {subprocess.py:97} INFO - Command exited with return code 127
+[2023-07-04T11:51:35.038+0530] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/shubhampriyadarshi/.pyenv/versions/3.9.16/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2023-07-04T11:51:35.041+0530] {taskinstance.py:1345} INFO - Marking task as UP_FOR_RETRY. dag_id=stackexchange_elt, task_id=dbt_curation, execution_date=20230702T000000, start_date=20230704T062134, end_date=20230704T062135
+[2023-07-04T11:51:35.047+0530] {standard_task_runner.py:104} ERROR - Failed to execute job 46 for task dbt_curation (Bash command failed. The command returned a non-zero exit code 127.; 3011)
+[2023-07-04T11:51:35.057+0530] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-04T11:51:35.072+0530] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
